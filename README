@@ -1,0 +1,27 @@
+This is to provide a sample code to create a Origins Ecommerce transaction using Google Pay with Braintree.
+
+1. install
+npm install
+
+2. fill config.js with Origins Ecommerce api_key, merchant_fid and order api url
+
+3. in Origins Ecommerce console of Gateway setup, set up Braintree 
+merchant id, merchant account id, public key and private key
+
+4. in index.html
+replace authorization with your BrainTree Tokenization Key
+replace sku, affiliate_alias and customer_ip
+
+5. start the server
+node index.js
+
+6. go to
+http://localhost:5000
+
+7. click Google Pay Button and try to make a payment
+
+8. If successful, will see something like:
+paid successful. Order reference:FRED-U1202242206-22GSB
+
+
+
