@@ -23,14 +23,14 @@
         braintree.client.create({
             //BrainTree Tokenization Keys
             authorization: "sandbox_7bj5fsqp_j52y8m6kf123456"
-        }).then(function (clientInstance) {
+        }).then((clientInstance) => {
             return braintree.googlePayment.create({
                 client: clientInstance,
                 googlePayVersion: 2,
                 // googleMerchantId: 'merchant-id-from-google' // Optional in sandbox;
                 // if set in sandbox, this value must be a valid production Google Merchant ID
             })
-        }).then(function (googlePaymentInstance) {
+        }).then((googlePaymentInstance) => {
             paymentDataRequest = googlePaymentInstance.createPaymentDataRequest();
             paymentDataRequest.emailRequired = true;
 
@@ -47,7 +47,7 @@
                 allowedPaymentMethods: [cardPaymentMethod],
                 existingPaymentMethodRequired: true
             });
-        }).then(function (isReadyToPay) {
+        }).then((isReadyToPay) => {
             if (isReadyToPay.result) {
                 // Set up Google Pay button
                 const button =
@@ -61,7 +61,7 @@
 
         function handleSubmit() {
             const gpEle = document.getElementById("gp");
-            
+
             //hide Googe Pay button after click
             gpEle.style.display = "none";
             document.getElementById("sp").style.display = "";
@@ -74,7 +74,7 @@
             }
 
             paymentsClient.loadPaymentData(paymentDataRequest)
-                .then(function (paymentData) {
+                .then((paymentData) => {
                     //get data needed to make a transaction
                     const tokenizationData = paymentData.paymentMethodData.tokenizationData.token;
                     const paymentNonce = (JSON.parse(tokenizationData)).androidPayCards[0].nonce
