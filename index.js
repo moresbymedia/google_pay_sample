@@ -3,7 +3,7 @@ const axios = require('axios');
 const qs = require('qs');
 const app = express();
 
-const config = require("./config.js")
+const config = require("./config")
 
 //middleware to parse incoming request with json payload
 app.use(express.json());
