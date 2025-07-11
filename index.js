@@ -35,7 +35,7 @@ app.post('/api/create_transaction', (req, res) => {
 });
 
 /**
- * Make API call to Origins Ecommerce
+ * Make order API call to Origins Ecommerce
  * @param {*} postData 
  * @returns 
  */

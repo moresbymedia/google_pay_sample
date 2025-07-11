@@ -83,7 +83,7 @@
                     //get full name
                     const billInfo = paymentData.paymentMethodData.info.billingAddress;
 
-                    //send our serv
+                    //send data to server to make a transaction
                     let postData = {
                         payment_method_nonce: paymentNonce,
                         customer_email: email,
